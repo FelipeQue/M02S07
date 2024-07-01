@@ -15,12 +15,12 @@ public class Consulta {
     @ManyToOne
     @Column(nullable = false)
     @JoinColumn(name = "id_nutricionista")
-    private Long id_nutricionista;
+    private Nutricionista nutricionista;
 
     @ManyToOne
     @Column(nullable = false)
     @JoinColumn(name = "id_paciente")
-    private Long id_paciente;
+    private Paciente paciente;
 
     private Date data_consulta;
     private String observacoes;
@@ -33,20 +33,20 @@ public class Consulta {
         this.id = id;
     }
 
-    public Long getId_nutricionista() {
-        return id_nutricionista;
+    public Nutricionista getNutricionista() {
+        return nutricionista;
     }
 
-    public void setId_nutricionista(Long id_nutricionista) {
-        this.id_nutricionista = id_nutricionista;
+    public void setNutricionista(Nutricionista nutricionista) {
+        this.nutricionista = nutricionista;
     }
 
-    public Long getId_paciente() {
-        return id_paciente;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setId_paciente(Long id_paciente) {
-        this.id_paciente = id_paciente;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     public Date getData_consulta() {

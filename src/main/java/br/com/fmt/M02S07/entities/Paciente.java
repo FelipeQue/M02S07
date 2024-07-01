@@ -25,7 +25,8 @@ public class Paciente {
 
     @ManyToOne
     @JoinColumn(name = "id_endereco")
-    private Long id_endereco;
+    private Endereco endereco;
+
 
     public Long getId() {
         return id;
@@ -75,12 +76,12 @@ public class Paciente {
         this.email = email;
     }
 
-    public Long getId_endereco() {
-        return id_endereco;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setId_endereco(Long id_endereco) {
-        this.id_endereco = id_endereco;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
 

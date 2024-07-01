@@ -12,15 +12,17 @@ public class Nutricionista {
 
     @Column(nullable = false)
     private String nome;
+
     private String matricula;
     private int tempo_experiencia;
 
     @ManyToOne
     @JoinColumn(name = "id_endereco")
-    private Long id_endereco;
+    private Endereco endereco;
 
     @Column(nullable = false)
     private String crn;
+
     private String especialidade;
 
 
@@ -56,12 +58,12 @@ public class Nutricionista {
         this.tempo_experiencia = tempo_experiencia;
     }
 
-    public Long getId_endereco() {
-        return id_endereco;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setId_endereco(Long id_endereco) {
-        this.id_endereco = id_endereco;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public String getCrn() {
