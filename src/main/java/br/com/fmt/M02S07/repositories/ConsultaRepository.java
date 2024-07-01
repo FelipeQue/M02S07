@@ -1,4 +1,7 @@
 package br.com.fmt.M02S07.repositories;
 
-public class ConsultaRepository {
+import br.com.fmt.M02S07.entities.Consulta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ConsultaRepository extends JpaRepository<Consulta,Long> {
 }
