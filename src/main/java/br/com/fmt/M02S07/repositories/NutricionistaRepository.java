@@ -1,2 +1,4 @@
-package br.com.fmt.M02S07.repositories;public class NutricionistaRepository {
+package br.com.fmt.M02S07.repositories;
+
+public class NutricionistaRepository {
 }
