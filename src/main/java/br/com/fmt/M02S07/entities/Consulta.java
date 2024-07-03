@@ -22,7 +22,7 @@ public class Consulta {
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
-    private Date data_consulta;
+    private Date data;
     private String observacoes;
 
     public Long getId() {
@@ -49,12 +49,12 @@ public class Consulta {
         this.paciente = paciente;
     }
 
-    public Date getData_consulta() {
-        return data_consulta;
+    public Date getData() {
+        return data;
     }
 
-    public void setData_consulta(Date data_consulta) {
-        this.data_consulta = data_consulta;
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public String getObservacoes() {

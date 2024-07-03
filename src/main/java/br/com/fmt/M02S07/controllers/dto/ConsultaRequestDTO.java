@@ -1,22 +1,54 @@
 package br.com.fmt.M02S07.controllers.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.util.Date;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class ConsultaRequestDTO {
 
-    // Aqui coloquei como necessárias as ids de nutricionista e paciente, para que o objeto seja buscado no Service
-    private Long id_nutricionista;
-    private Long id_paciente;
-    private Date data_consulta;
+    private Long idNutricionista;
+    private Long idPaciente;
+    private Date data;
     private String observacoes;
+
+    public ConsultaRequestDTO(){
+    }
+
+    public ConsultaRequestDTO(Long idNutricionista, Long idPaciente, Date data, String observacoes) {
+        this.idNutricionista = idNutricionista;
+        this.idPaciente = idPaciente;
+        this.data = data;
+        this.observacoes = observacoes;
+    }
+
+    public Long getIdNutricionista() {
+        return idNutricionista;
+    }
+
+    public void setIdNutricionista(Long idNutricionista) {
+        this.idNutricionista = idNutricionista;
+    }
+
+    public Long getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(Long idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
 
 }
