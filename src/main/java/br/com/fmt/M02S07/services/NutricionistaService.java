@@ -8,6 +8,7 @@ import br.com.fmt.M02S07.repositories.NutricionistaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -53,6 +54,9 @@ public class NutricionistaService {
     }
 
     public NutricionistaResponseDTO salvarNutricionista(NutricionistaRequestDTO request) {
+        if (nutricionistaRepository.findByNome(request.getNome()).isPresent()) {
+            throw new RuntimeException("Já existe cadastro de nutricionista com este nome.");
+        }
         Nutricionista nutricionista = mapearRequest(request);
         Nutricionista entitySalva = nutricionistaRepository.save(nutricionista);
 
@@ -79,7 +83,13 @@ public class NutricionistaService {
 
     public void atualizarNutricionista(Long id, NutricionistaRequestDTO request) {
         Nutricionista nutricionista = nutricionistaRepository.findById(id).orElse(null);
+
         assert nutricionista != null;
+        if (!Objects.equals(nutricionista.getNome(), request.getNome()) &&
+        nutricionistaRepository.findByNome(request.getNome()).isPresent()) {
+            throw new RuntimeException("Já existe cadastro de nutricionista com este nome.");
+        }
+
         nutricionista.setNome(request.getNome());
         nutricionista.setMatricula(request.getMatricula());
         nutricionista.setTempoExperiencia(request.getTempoExperiencia());
