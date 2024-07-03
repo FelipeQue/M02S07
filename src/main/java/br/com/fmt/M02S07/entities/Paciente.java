@@ -15,7 +15,7 @@ public class Paciente {
     @Column(nullable = false)
     private String nome;
 
-    private Date data_nascimento;
+    private Date dataNascimento;
 
     @Column(nullable = false)
     private String cpf;
@@ -44,12 +44,12 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public Date getData_nascimento() {
-        return data_nascimento;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getCpf() {

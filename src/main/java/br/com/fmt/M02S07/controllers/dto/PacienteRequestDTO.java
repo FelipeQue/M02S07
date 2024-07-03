@@ -14,10 +14,10 @@ import java.util.Date;
 public class PacienteRequestDTO {
 
     private String nome;
-    private Date data_nascimento;
+    private Date dataNascimento;
     private String cpf;
     private String telefone;
     private String email;
-    private Long id_endereco;
+    private Long idEndereco;
 
 }

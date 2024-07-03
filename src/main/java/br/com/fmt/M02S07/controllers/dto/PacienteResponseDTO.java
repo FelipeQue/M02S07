@@ -19,10 +19,11 @@ public class PacienteResponseDTO {
 
     private Long id;
     private String nome;
-    private Date data_nascimento;
+    private Date dataNascimento;
     private String cpf;
     private String telefone;
     private String email;
     private Endereco endereco;
+
 
 }
