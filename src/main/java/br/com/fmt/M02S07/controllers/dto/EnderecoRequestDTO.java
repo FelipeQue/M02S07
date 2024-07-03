@@ -1,10 +1,5 @@
 package br.com.fmt.M02S07.controllers.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@AllArgsConstructor
 public class EnderecoRequestDTO {
 
     private String logradouro;
@@ -12,6 +7,17 @@ public class EnderecoRequestDTO {
     private String cidade;
     private String numero;
     private String cep;
+
+    public EnderecoRequestDTO(){
+    }
+
+    public EnderecoRequestDTO(String logradouro, String estado, String cidade, String numero, String cep) {
+        this.logradouro = logradouro;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.numero = numero;
+        this.cep = cep;
+    }
 
     public String getLogradouro() {
         return logradouro;

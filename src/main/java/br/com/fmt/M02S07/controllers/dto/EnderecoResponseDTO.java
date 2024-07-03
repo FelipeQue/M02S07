@@ -1,10 +1,5 @@
 package br.com.fmt.M02S07.controllers.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@AllArgsConstructor
 public class EnderecoResponseDTO {
 
     private Long id;

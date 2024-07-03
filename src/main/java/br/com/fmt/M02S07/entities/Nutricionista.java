@@ -14,7 +14,7 @@ public class Nutricionista {
     private String nome;
 
     private String matricula;
-    private int tempo_experiencia;
+    private int tempoExperiencia;
 
     @ManyToOne
     @JoinColumn(name = "id_endereco")
@@ -50,12 +50,12 @@ public class Nutricionista {
         this.matricula = matricula;
     }
 
-    public int getTempo_experiencia() {
-        return tempo_experiencia;
+    public int getTempoExperiencia() {
+        return tempoExperiencia;
     }
 
-    public void setTempo_experiencia(int tempo_experiencia) {
-        this.tempo_experiencia = tempo_experiencia;
+    public void setTempoExperiencia(int tempoExperiencia) {
+        this.tempoExperiencia = tempoExperiencia;
     }
 
     public Endereco getEndereco() {

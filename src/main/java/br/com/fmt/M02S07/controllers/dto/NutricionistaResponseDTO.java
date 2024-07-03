@@ -1,26 +1,83 @@
 package br.com.fmt.M02S07.controllers.dto;
 
 import br.com.fmt.M02S07.entities.Endereco;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class NutricionistaResponseDTO {
 
     private Long id;
     private String nome;
     private String matricula;
-    private int tempo_experiencia;
+    private int tempoExperiencia;
     private Endereco endereco;
     private String crn;
     private String especialidade;
 
+    public NutricionistaResponseDTO() {
+    }
+
+    public NutricionistaResponseDTO(Long id, String nome, String matricula, int tempoExperiencia, Endereco endereco, String crn, String especialidade) {
+        this.id = id;
+        this.nome = nome;
+        this.matricula = matricula;
+        this.tempoExperiencia = tempoExperiencia;
+        this.endereco = endereco;
+        this.crn = crn;
+        this.especialidade = especialidade;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getTempoExperiencia() {
+        return tempoExperiencia;
+    }
+
+    public void setTempoExperiencia(int tempoExperiencia) {
+        this.tempoExperiencia = tempoExperiencia;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCrn() {
+        return crn;
+    }
+
+    public void setCrn(String crn) {
+        this.crn = crn;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
 }
