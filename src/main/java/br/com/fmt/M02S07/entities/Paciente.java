@@ -10,6 +10,7 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_paciente")
     private Long id;
 
     @Column(nullable = false)

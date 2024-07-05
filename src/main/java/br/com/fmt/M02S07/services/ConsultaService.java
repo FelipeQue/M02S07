@@ -24,6 +24,12 @@ public class ConsultaService {
         this.pacienteRepository = pacienteRepository;
     }
 
+    // TODO:
+//    Para listar Consultas devemos ter as seguintes informações:
+//    Data / hora;
+//    Nome do nutricionista;
+//    Nome do paciente.
+
     public List<ConsultaResponseDTO> listarConsultas() {
         return consultaRepository.findAll().stream().map(
                 consulta -> new ConsultaResponseDTO(

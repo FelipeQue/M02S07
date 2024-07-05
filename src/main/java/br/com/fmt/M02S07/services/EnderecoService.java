@@ -65,13 +65,21 @@ public class EnderecoService {
         );
     }
 
-    public void atualizarEndereco(Long id, EnderecoRequestDTO request) {
+    public EnderecoResponseDTO atualizarEndereco(Long id, EnderecoRequestDTO request) {
         Endereco endereco = enderecoRepository.findById(id).orElse(null);
         endereco.setLogradouro(request.getLogradouro());
         endereco.setNumero(request.getNumero());
         endereco.setCidade(request.getCidade());
         endereco.setEstado(request.getEstado());
         endereco.setCep(request.getCep());
+
+        return new EnderecoResponseDTO(endereco.getId(),
+                endereco.getLogradouro(),
+                endereco.getNumero(),
+                endereco.getCidade(),
+                endereco.getEstado(),
+                endereco.getCep()
+        );
     }
 
     public void removerEndereco(Long id) {

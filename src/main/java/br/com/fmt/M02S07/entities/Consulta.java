@@ -13,12 +13,10 @@ public class Consulta {
     private Long id;
 
     @ManyToOne
-    @Column(nullable = false)
-    @JoinColumn(name = "id_nutricionista")
+    // @JoinColumn(name = "id_nutricionista") OPCIONAL ISSO AQUI.
     private Nutricionista nutricionista;
 
     @ManyToOne
-    @Column(nullable = false)
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 

@@ -102,5 +102,14 @@ public class NutricionistaService {
         nutricionistaRepository.deleteById(id);
     }
 
+    public void adicionarAnoExperiencia(Long id) {
+        Nutricionista nutricionista = nutricionistaRepository.findById(id).orElse(null);
+        assert nutricionista != null;
+        nutricionista.setTempoExperiencia(nutricionista.getTempoExperiencia() + 1);
+    }
+
+    // TODO:
+    //Adicionar Certificação - Adiciona uma string de certificação.
+
 
 }

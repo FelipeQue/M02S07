@@ -8,6 +8,7 @@ public class Nutricionista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_nutricionista")
     private Long id;
 
     @Column(nullable = false)
