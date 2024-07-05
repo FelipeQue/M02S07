@@ -2,6 +2,9 @@ package br.com.fmt.M02S07.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "nutricionista")
 public class Nutricionista {
@@ -25,6 +28,9 @@ public class Nutricionista {
     private String crn;
 
     private String especialidade;
+
+    @ElementCollection
+    private Set<String> certificacoes = new HashSet<>();
 
 
     public Long getId() {
@@ -81,5 +87,13 @@ public class Nutricionista {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public Set<String> getCertificacoes() {
+        return certificacoes;
+    }
+
+    public void setCertificacoes(Set<String> certificacoes) {
+        this.certificacoes = certificacoes;
     }
 }

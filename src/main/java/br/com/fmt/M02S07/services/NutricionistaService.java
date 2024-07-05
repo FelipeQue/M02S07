@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -108,8 +109,13 @@ public class NutricionistaService {
         nutricionista.setTempoExperiencia(nutricionista.getTempoExperiencia() + 1);
     }
 
-    // TODO:
-    //Adicionar Certificação - Adiciona uma string de certificação.
+    public void adicionarCertificacao(String novaCertificacao, Long id){
+        Nutricionista nutricionista = nutricionistaRepository.findById(id).orElse(null);
+        if (nutricionista != null) {
+            Set<String> certificacoes = nutricionista.getCertificacoes();
+            certificacoes.add(novaCertificacao);
+        }
+    }
 
 
 }
