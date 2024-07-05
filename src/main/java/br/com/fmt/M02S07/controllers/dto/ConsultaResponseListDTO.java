@@ -1,0 +1,53 @@
+package br.com.fmt.M02S07.controllers.dto;
+
+import br.com.fmt.M02S07.entities.Nutricionista;
+import br.com.fmt.M02S07.entities.Paciente;
+
+import java.util.Date;
+
+public class ConsultaResponseListDTO {
+
+    private Long id;
+    private String nomeNutricionista;
+    private String nomePaciente;
+    private Date data;
+
+    public ConsultaResponseListDTO(Long id, String nomeNutricionista, String nomePaciente, Date data) {
+        this.id = id;
+        this.nomeNutricionista = nomeNutricionista;
+        this.nomePaciente = nomePaciente;
+        this.data = data;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeNutricionista() {
+        return nomeNutricionista;
+    }
+
+    public void setNomeNutricionista(String nomeNutricionista) {
+        this.nomeNutricionista = nomeNutricionista;
+    }
+
+    public String getNomePaciente() {
+        return nomePaciente;
+    }
+
+    public void setNomePaciente(String nomePaciente) {
+        this.nomePaciente = nomePaciente;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+}

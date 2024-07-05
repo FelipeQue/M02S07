@@ -1,7 +1,6 @@
 package br.com.fmt.M02S07.services;
 
-import br.com.fmt.M02S07.controllers.dto.ConsultaRequestDTO;
-import br.com.fmt.M02S07.controllers.dto.ConsultaResponseDTO;
+import br.com.fmt.M02S07.controllers.dto.*;
 import br.com.fmt.M02S07.entities.Consulta;
 import br.com.fmt.M02S07.repositories.ConsultaRepository;
 import br.com.fmt.M02S07.repositories.NutricionistaRepository;
@@ -24,20 +23,14 @@ public class ConsultaService {
         this.pacienteRepository = pacienteRepository;
     }
 
-    // TODO:
-//    Para listar Consultas devemos ter as seguintes informações:
-//    Data / hora;
-//    Nome do nutricionista;
-//    Nome do paciente.
-
-    public List<ConsultaResponseDTO> listarConsultas() {
+    // Listar consultas apenas com Data/Hora, nome de Nutricionista e nome de Paciente.
+    public List<ConsultaResponseListDTO> listarConsultas() {
         return consultaRepository.findAll().stream().map(
-                consulta -> new ConsultaResponseDTO(
+                consulta -> new ConsultaResponseListDTO(
                         consulta.getId(),
-                        consulta.getNutricionista(),
-                        consulta.getPaciente(),
-                        consulta.getData(),
-                        consulta.getObservacoes()
+                        consulta.getNutricionista().getNome(),
+                        consulta.getPaciente().getNome(),
+                        consulta.getData()
                 )
         ).collect(Collectors.toList());
     }
