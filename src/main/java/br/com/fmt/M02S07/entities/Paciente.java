@@ -1,5 +1,6 @@
 package br.com.fmt.M02S07.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -16,6 +17,7 @@ public class Paciente {
     @Column(nullable = false)
     private String nome;
 
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Date dataNascimento;
 
     @Column(nullable = false)

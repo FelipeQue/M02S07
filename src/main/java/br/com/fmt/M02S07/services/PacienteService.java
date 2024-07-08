@@ -77,7 +77,7 @@ public class PacienteService {
         return target;
     }
 
-    public void atualizarPaciente(Long id, PacienteRequestDTO request) {
+    public PacienteResponseDTO atualizarPaciente(Long id, PacienteRequestDTO request) {
         Paciente paciente = pacienteRepository.findById(id).orElse(null);
         assert paciente != null;
         paciente.setNome(request.getNome());
@@ -87,6 +87,16 @@ public class PacienteService {
         paciente.setEmail(request.getEmail());
         paciente.setEndereco(enderecoRepository.findById(request.getIdEndereco()).orElse(null));
 
+        pacienteRepository.save(paciente);
+
+        return new PacienteResponseDTO(paciente.getId(),
+                paciente.getNome(),
+                paciente.getDataNascimento(),
+                paciente.getCpf(),
+                paciente.getTelefone(),
+                paciente.getEmail(),
+                paciente.getEndereco()
+        );
     }
 
     public void removerPaciente(Long id) {

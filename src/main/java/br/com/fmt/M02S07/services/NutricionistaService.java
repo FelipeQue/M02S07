@@ -82,7 +82,7 @@ public class NutricionistaService {
         return target;
     }
 
-    public void atualizarNutricionista(Long id, NutricionistaRequestDTO request) {
+    public NutricionistaResponseDTO atualizarNutricionista(Long id, NutricionistaRequestDTO request) {
         Nutricionista nutricionista = nutricionistaRepository.findById(id).orElse(null);
 
         assert nutricionista != null;
@@ -96,7 +96,17 @@ public class NutricionistaService {
         nutricionista.setTempoExperiencia(request.getTempoExperiencia());
         nutricionista.setCrn(request.getCrn());
         nutricionista.setEspecialidade(request.getEspecialidade());
+        nutricionista.setEndereco(enderecoRepository.findById(request.getIdEndereco()).orElse(null));
 
+        nutricionistaRepository.save(nutricionista);
+        return new NutricionistaResponseDTO(nutricionista.getId(),
+                nutricionista.getNome(),
+                nutricionista.getMatricula(),
+                nutricionista.getTempoExperiencia(),
+                nutricionista.getEndereco(),
+                nutricionista.getCrn(),
+                nutricionista.getEspecialidade()
+                );
     }
 
     public void removerNutricionista(Long id) {

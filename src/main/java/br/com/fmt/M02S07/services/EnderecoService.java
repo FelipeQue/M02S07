@@ -73,6 +73,8 @@ public class EnderecoService {
         endereco.setEstado(request.getEstado());
         endereco.setCep(request.getCep());
 
+        enderecoRepository.save(endereco);
+
         return new EnderecoResponseDTO(endereco.getId(),
                 endereco.getLogradouro(),
                 endereco.getNumero(),
