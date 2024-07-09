@@ -1,18 +1,25 @@
 package br.com.fmt.M02S07.controllers.dto;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import java.time.LocalDate;
 
 public class ConsultaRequestDTO {
 
     private Long idNutricionista;
     private Long idPaciente;
-    private Date data;
+
+    @JsonDeserialize
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate data;
     private String observacoes;
 
     public ConsultaRequestDTO(){
     }
 
-    public ConsultaRequestDTO(Long idNutricionista, Long idPaciente, Date data, String observacoes) {
+    public ConsultaRequestDTO(Long idNutricionista, Long idPaciente, LocalDate data, String observacoes) {
         this.idNutricionista = idNutricionista;
         this.idPaciente = idPaciente;
         this.data = data;
@@ -35,11 +42,11 @@ public class ConsultaRequestDTO {
         this.idPaciente = idPaciente;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

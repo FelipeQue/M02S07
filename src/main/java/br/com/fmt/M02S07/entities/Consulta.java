@@ -1,8 +1,10 @@
 package br.com.fmt.M02S07.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "consulta")
@@ -20,7 +22,7 @@ public class Consulta {
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
-    private Date data;
+    private LocalDate data;
     private String observacoes;
 
     public Long getId() {
@@ -47,11 +49,11 @@ public class Consulta {
         this.paciente = paciente;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

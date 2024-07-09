@@ -3,7 +3,7 @@ package br.com.fmt.M02S07.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "paciente")
@@ -17,8 +17,7 @@ public class Paciente {
     @Column(nullable = false)
     private String nome;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(nullable = false)
     private String cpf;
@@ -47,11 +46,11 @@ public class Paciente {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

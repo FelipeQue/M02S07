@@ -1,11 +1,13 @@
 package br.com.fmt.M02S07.controllers.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,7 +16,11 @@ import java.util.Date;
 public class PacienteRequestDTO {
 
     private String nome;
-    private Date dataNascimento;
+
+    @JsonDeserialize
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
+
     private String cpf;
     private String telefone;
     private String email;

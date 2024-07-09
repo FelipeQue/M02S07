@@ -2,20 +2,26 @@ package br.com.fmt.M02S07.controllers.dto;
 
 import br.com.fmt.M02S07.entities.Nutricionista;
 import br.com.fmt.M02S07.entities.Paciente;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ConsultaResponseDTO {
 
     private Long id;
     private Nutricionista nutricionista;
     private Paciente paciente;
-    private Date data;
+
+    @JsonSerialize
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate data;
+
     private String observacoes;
 
     public ConsultaResponseDTO(){}
 
-    public ConsultaResponseDTO(Long id, Nutricionista nutricionista, Paciente paciente, Date data, String observacoes) {
+    public ConsultaResponseDTO(Long id, Nutricionista nutricionista, Paciente paciente, LocalDate data, String observacoes) {
         this.id = id;
         this.nutricionista = nutricionista;
         this.paciente = paciente;
@@ -47,11 +53,11 @@ public class ConsultaResponseDTO {
         this.paciente = paciente;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

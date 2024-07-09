@@ -1,8 +1,6 @@
 package br.com.fmt.M02S07.controllers.dto;
 
-import br.com.fmt.M02S07.entities.Nutricionista;
-import br.com.fmt.M02S07.entities.Paciente;
-
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ConsultaResponseListDTO {
@@ -10,9 +8,9 @@ public class ConsultaResponseListDTO {
     private Long id;
     private String nomeNutricionista;
     private String nomePaciente;
-    private Date data;
+    private LocalDate data;
 
-    public ConsultaResponseListDTO(Long id, String nomeNutricionista, String nomePaciente, Date data) {
+    public ConsultaResponseListDTO(Long id, String nomeNutricionista, String nomePaciente, LocalDate data) {
         this.id = id;
         this.nomeNutricionista = nomeNutricionista;
         this.nomePaciente = nomePaciente;
@@ -43,11 +41,11 @@ public class ConsultaResponseListDTO {
         this.nomePaciente = nomePaciente;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 }
